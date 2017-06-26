@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
   def send_message
-    account_sid = "ACa41f31fd1164c79a6fb46bcf1e3fb438"
-    auth_token = "c44a56784f930da27130160095b87ae6"
+    account_sid = "yyy"
+    auth_token = "xxx"
 
         @client = Twilio::REST::Client.new account_sid, auth_token
-        @twilio_number = "+7815145857" 
+        @twilio_number = "+xxx" 
         message = @client.messages.create(
           :from => @twilio_number,
-          :to => 7814003837,
+          :to => @verified_phone_number,
           :body => alert_message
         )
         puts message.to
